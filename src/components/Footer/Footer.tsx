@@ -4,15 +4,15 @@ import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import telegram from '../../assets/telegram.svg'
-import instagramIcon from '../../assets/instagram.svg'
+import facebook from '../../assets/facebook.png'
 // import discordIcon from '../../assets/discord.png'
 
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://vinayaksingh.in" className="logo">
-        <span>www.vinayak</span>
-        <span>singh.in</span>
+      <a href="https://pradipgadal.com.np/" className="logo">
+        <span>www.pradip</span>
+        <span>gadal.com.np</span>
       </a>
       <div>
         <p>
@@ -22,14 +22,14 @@ export function Footer() {
       </div>
       <div className="social-media">
         <a
-          href="https://www.linkedin.com/in/codevinayak"
+          href="https://www.linkedin.com/in/pradip-gadal-75b2291b8/"
           target="_blank"
           rel="noreferrer"
         >
           <img src={linkedin} alt="Linkedin" />
         </a>
         <a
-          href="https://github.com/CodeVinayak/"
+          href="https://github.com/Pradip-Gadal/"
           target="_blank"
           rel="noreferrer"
         >
@@ -43,18 +43,11 @@ export function Footer() {
           <img src={whatsapp} alt="Whatsapp" />
         </a>
         <a
-          href="https://t.me/CodeVinayak"
+          href="https://www.facebook.com/pradip.gadal.75/"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={telegram} alt="telegram" />
-        </a>
-        <a
-          href="https://www.instagram.com/vinayaksingh.in"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={instagramIcon} alt="Instagram" />
+          <img src={facebook} alt="facebook" />
         </a>
       </div>
     </Container>
