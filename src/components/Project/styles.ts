@@ -11,20 +11,33 @@ export const Container = styled.section`
   }
   .projects{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
     padding: 1rem;
     overflow: hidden;
+    align-items: stretch;
+
+    /* Make wrappers (ScrollAnimation div, anchor) fill the grid cell so .project can stretch */
+    > * {
+      height: 100%;
+      display: flex;
+    }
+    > * > a,
+    > * > div {
+      width: 100%;
+      height: 100%;
+    }
 
     .project{
-      padding: 2rem 1.8rem;
+      padding: 1.4rem 1.4rem;
       background-color: #2b2b2b;
-      border-radius: 1.2rem;
+      border-radius: 1rem;
       transition: 0.25s;
       display: flex;
       flex-direction: column;
       height: 100%;
+      width: 100%;
       color: #FFF;
       &:hover{
         transform: translateY(-5px);
@@ -36,24 +49,36 @@ export const Container = styled.section`
         align-items: center;
         justify-content: space-between;
         color: var(--blue);
-        margin-bottom: 3.6rem;
+        margin-bottom: 1.4rem;
+        svg {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
         .project-links{
           display: flex;
           align-items: center;
-          gap: 1rem;
+          gap: 0.8rem;
         }
-        a > img {
-          width: 5.0rem;
+        a > img,
+        .project-links > img {
+          width: 2.4rem;
         }
       }
-      
+
       h3{
-        margin-bottom: 2rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.7rem;
       }
 
       p{
-        letter-spacing: 0.12rem;
-        margin-bottom: 2rem;
+        letter-spacing: 0.06rem;
+        margin-bottom: 1.2rem;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         a{
           color: #FFFF;
           border-bottom: 1px solid var(--green);
@@ -68,9 +93,10 @@ export const Container = styled.section`
         margin-top: auto;
         .tech-list{
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
-          gap: 2rem;
-          font-size: 1.4rem;
+          gap: 0.8rem 1.2rem;
+          font-size: 1.1rem;
           opacity: 0.6;
         }
       }
@@ -78,13 +104,19 @@ export const Container = styled.section`
     }
   }
 
-  @media (max-width: 960px){
+  @media (max-width: 1200px){
     .projects{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  @media (max-width: 740px){
+  @media (max-width: 960px){
+    .projects{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px){
     .projects{
       grid-template-columns: 1fr;
     }
